@@ -29,7 +29,7 @@ public class Dino extends Actor
         }else{
             if ("space".equals(Greenfoot.getKey())) // jump key detected
             {
-                ySpeed = -15; // add jump speed
+                ySpeed = -18; // add jump speed
                 setLocation(getX(), getY()+ySpeed); // leave ground
             }
         }
