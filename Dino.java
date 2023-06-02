@@ -10,7 +10,7 @@ public class Dino extends Actor
     {
     GreenfootImage image = new GreenfootImage("dinoGreen1.gif");
     public Dino(){
-       image.scale(90,90);
+       image.scale(80,80);
        setImage(image);
     }
     private int ySpeed;
@@ -29,10 +29,20 @@ public class Dino extends Actor
         }else{
             if ("space".equals(Greenfoot.getKey())) // jump key detected
             {
-                ySpeed = -18; // add jump speed
+                ySpeed = -20; // add jump speed
                 setLocation(getX(), getY()+ySpeed); // leave ground
             }
         }
+        if (isTouching(Cactus.class)){
+            //MyWorld world = (MyWorld) getWorld();
+            gameOver();
+        }
+     
+    }
+    public void gameOver(){
+        Label gameOverLabel = new Label("Game Over", 100);
+        addObject(gameOverLabel, 300, 200);
+        Greenfoot.stop();
     }
 }
 

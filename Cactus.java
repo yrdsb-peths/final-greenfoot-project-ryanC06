@@ -15,6 +15,33 @@ public class Cactus extends Actor
     }
     public void act()
     {
-        
+        move(-5);
+        if(atWorldEdge())
+        {
+            MyWorld world = (MyWorld) getWorld();
+            world.creatCactus();
+            getWorld().removeObject(this);
+            
+        }
+
+    }
+    public boolean atWorldEdge()
+    {
+        if(getX() < 10 || getX() > getWorld().getWidth()-10)
+        {
+            return true;
+        }
+        if(getX() < 10 || getY() > getWorld().getHeight()-10)
+        {
+           return true;
+        }
+        if(getX() < 10 || getY() < 3)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

@@ -19,15 +19,16 @@ public class MyWorld extends World
         super(600, 400, 1);
         creatCactus();
         creatDino();
+        
 
     }
     public void creatCactus(){
         Cactus cactus = new Cactus();
-        addObject(cactus,300,370);
+        addObject(cactus,550,370);
         }
         
     public void creatDino(){
         Dino dino = new Dino();
-        addObject(dino,200, 370);
+        addObject(dino,100, 350);
     }
 }
