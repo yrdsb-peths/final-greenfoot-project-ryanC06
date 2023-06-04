@@ -19,6 +19,7 @@ public class MyWorld extends World
         super(600, 400, 1);
         creatCactus();
         creatDino();
+        creatCloud();
         
 
     }
@@ -31,4 +32,10 @@ public class MyWorld extends World
         Dino dino = new Dino();
         addObject(dino,100, 350);
     }
+    
+    public void creatCloud(){
+        Cloud cloud = new Cloud();
+        addObject(cloud, 500,50);
+    }
+    
 }

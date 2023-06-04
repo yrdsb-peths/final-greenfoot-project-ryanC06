@@ -33,10 +33,10 @@ public class Dino extends Actor
                 setLocation(getX(), getY()+ySpeed); // leave ground
             }
         }
-        if (isTouching(Cactus.class)){
+        //if (isTouching(Cactus.class)){
             //MyWorld world = (MyWorld) getWorld();
-            gameOver();
-           }
+            //gameOver();
+          // }
      
     }
         public void gameOver(){
