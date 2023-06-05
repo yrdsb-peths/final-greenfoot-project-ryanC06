@@ -8,11 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Dino extends Actor 
     {
-    GreenfootImage image = new GreenfootImage("dinoGreen1.gif");
+    GreenfootImage[]idle = new GreenfootImage[5];
     public Dino(){
-       image.scale(80,80);
-       setImage(image);
+       for(int i = 0 ; i <5; i++){
+           idle[i] = new GreenfootImage("idle"+ i + ".png");
+           idle[i].scale(80,80);
+       }
+       setImage(idle[0]);
     }
+    int imageIndex = 0 ;
+    public void animateDino(){
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
+    }
+    
     private int ySpeed;
     public void act(){
         int groundLevel = getWorld().getHeight() - getImage().getHeight()/2;
@@ -36,7 +45,9 @@ public class Dino extends Actor
         //if (isTouching(Cactus.class)){
             //MyWorld world = (MyWorld) getWorld();
             //gameOver();
-          // }
+          //}
+          
+        animateDino();
      
     }
         public void gameOver(){

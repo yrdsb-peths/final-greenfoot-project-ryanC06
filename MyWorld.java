@@ -30,7 +30,7 @@ public class MyWorld extends World
         
     public void creatDino(){
         Dino dino = new Dino();
-        addObject(dino,100, 350);
+        addObject(dino,150, 350);
     }
     
     public void creatCloud(){

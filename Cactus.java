@@ -10,7 +10,7 @@ public class Cactus extends Actor
 {
     GreenfootImage image = new GreenfootImage("cactus1.png");
     public Cactus(){
-       image.scale(90,90);
+       image.scale(80,80);
        setImage(image);
     }
     public void act()
