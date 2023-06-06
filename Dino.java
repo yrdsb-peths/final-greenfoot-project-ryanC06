@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Dino extends Actor 
     {
+    
     GreenfootImage[]idle = new GreenfootImage[5];
     public Dino(){
        for(int i = 0 ; i <5; i++){
@@ -38,22 +39,18 @@ public class Dino extends Actor
         }else{
             if ("space".equals(Greenfoot.getKey())) // jump key detected
             {
-                ySpeed = -20; // add jump speed
+                ySpeed = -23; // add jump speed
                 setLocation(getX(), getY()+ySpeed); // leave ground
             }
         }
-        //if (isTouching(Cactus.class)){
-            //MyWorld world = (MyWorld) getWorld();
-            //gameOver();
-          //}
+        if (isTouching(Cactus.class)){
+            MyWorld world = (MyWorld) getWorld();
+            world.gameOver();
+          }
           
         animateDino();
      
     }
-        public void gameOver(){
-        //Label gameOverLabel = new Label("Game Over", 100);
-        //addObject(gameOverLabel, 300, 200);
-        Greenfoot.stop();
-    }
+
 }
 

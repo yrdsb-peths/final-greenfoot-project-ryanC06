@@ -13,19 +13,20 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         creatCactus();
         creatDino();
-        creatCloud();
+        //creatCloud();
         
 
     }
     public void creatCactus(){
         Cactus cactus = new Cactus();
-        addObject(cactus,550,370);
+        addObject(cactus,590,370);
         }
         
     public void creatDino(){
@@ -35,7 +36,12 @@ public class MyWorld extends World
     
     public void creatCloud(){
         Cloud cloud = new Cloud();
-        addObject(cloud, 500,50);
+        addObject(cloud, 590,50);
     }
     
+       public void gameOver(){
+        Label gameOverLabel = new Label("Game Over", 100);
+        addObject(gameOverLabel, 300, 200);
+        Greenfoot.stop();
+    }
 }
