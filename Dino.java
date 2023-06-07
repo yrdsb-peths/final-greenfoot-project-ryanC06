@@ -25,6 +25,8 @@ public class Dino extends Actor
     
     private int ySpeed;
     public void act(){
+        MyWorld world = (MyWorld) getWorld();
+        world.increaseScore();
         int groundLevel = getWorld().getHeight() - getImage().getHeight()/2;
         boolean onGround = (getY() == groundLevel);  
         if (!onGround) // in middle of jump
@@ -44,7 +46,7 @@ public class Dino extends Actor
             }
         }
         if (isTouching(Cactus.class)){
-            MyWorld world = (MyWorld) getWorld();
+            //MyWorld world = (MyWorld) getWorld();
             world.gameOver();
           }
           

@@ -8,11 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    private int Score = 0; 
+    Label scoreLabel;
 
     public MyWorld()
     {    
@@ -21,6 +18,9 @@ public class MyWorld extends World
         creatCactus();
         creatDino();
         //creatCloud();
+        
+        scoreLabel = new Label(0, 80);
+        addObject(scoreLabel, 50 , 50);
     }
     
     public void creatCactus(){
@@ -43,5 +43,10 @@ public class MyWorld extends World
         addObject(gameOverLabel, 300, 200);
         Greenfoot.stop();
         
+    }
+    public void increaseScore(){
+        
+        Score++;
+        scoreLabel.setValue(Score);
     }
 }
