@@ -17,13 +17,12 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+        super(600, 400, 1);         
         creatCactus();
         creatDino();
         //creatCloud();
-        
-
     }
+    
     public void creatCactus(){
         Cactus cactus = new Cactus();
         addObject(cactus,590,370);
@@ -43,5 +42,6 @@ public class MyWorld extends World
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
         Greenfoot.stop();
+        
     }
 }
