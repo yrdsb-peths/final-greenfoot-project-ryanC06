@@ -10,6 +10,7 @@ public class MyWorld extends World
 {
     private int Score = 0; 
     Label scoreLabel;
+    Label highScoreLabel;
 
     public MyWorld()
     {    
@@ -19,8 +20,11 @@ public class MyWorld extends World
         creatDino();
         //creatCloud();
         
-        scoreLabel = new Label(0, 80);
-        addObject(scoreLabel, 50 , 50);
+        scoreLabel = new Label(0, 50);
+        addObject(scoreLabel, 500 , 50);
+        
+        highScoreLabel = new Label(0,50);
+        addObject(highScoreLabel, 50, 50);
     }
     
     public void creatCactus(){
