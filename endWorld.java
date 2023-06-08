@@ -17,12 +17,14 @@ public class endWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
+        GreenfootImage image = new GreenfootImage("resetButton.png");
     }
     public void act(){
         if(Greenfoot.isKeyDown("space")){
             Greenfoot.setWorld(new MyWorld());
         }
-        
+        Label gameOverLabel = new Label("Game Over", 100);
+        addObject(gameOverLabel, 300, 100);
     }
     
 }
