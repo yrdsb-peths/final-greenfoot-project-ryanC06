@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     private int Score = 0; 
+    private int highScore = 0;
     Label scoreLabel;
     Label highScoreLabel;
 
@@ -43,14 +44,22 @@ public class MyWorld extends World
     }
     
        public void gameOver(){
-        Label gameOverLabel = new Label("Game Over", 100);
-        addObject(gameOverLabel, 300, 200);
-        Greenfoot.stop();
+        Greenfoot.setWorld(new endWorld());
+        //bestScore();
+        //Greenfoot.stop();
         
     }
     public void increaseScore(){
         
         Score++;
         scoreLabel.setValue(Score);
+    }
+    public void bestScore(){
+        if ( Score <= highScore){
+            highScore = highScore;
+        }else if (Score > highScore){
+            Score = highScore;
+            highScoreLabel.setValue(highScore);
+        }
     }
 }
