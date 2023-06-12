@@ -45,8 +45,8 @@ public class MyWorld extends World
     
        public void gameOver(){
         Greenfoot.setWorld(new endWorld());
-        //bestScore();
-        //Greenfoot.stop();
+        bestScore();
+        
         
     }
     public void increaseScore(){
@@ -55,11 +55,12 @@ public class MyWorld extends World
         scoreLabel.setValue(Score);
     }
     public void bestScore(){
-        if ( Score <= highScore){
+        if ( Score < highScore){
             highScore = highScore;
         }else if (Score > highScore){
             Score = highScore;
-            highScoreLabel.setValue(highScore);
+            
         }
+        highScoreLabel.setValue(highScore);
     }
 }

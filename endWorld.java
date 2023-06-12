@@ -25,6 +25,9 @@ public class endWorld extends World
         }
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 100);
+        Label restGame = new Label("Press <space> to Restart", 50);
+        addObject(restGame, 300,250);
+        
     }
     
 }
