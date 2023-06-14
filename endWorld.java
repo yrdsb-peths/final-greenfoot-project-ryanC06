@@ -13,8 +13,6 @@ public class endWorld extends World
      * Constructor for objects of class endWorld.
      * 
      */
-    private int highScore = 0;
-    Label highScoreLabel;
     public endWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -29,7 +27,7 @@ public class endWorld extends World
         addObject(gameOverLabel, 300, 100);
         Label restGame = new Label("Press <space> to Restart", 50);
         addObject(restGame, 300,250);
-       
+        
     }
     
     

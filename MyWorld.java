@@ -9,10 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     private int Score = 0; 
-    //private int highScore = 0;
     Label scoreLabel;
-    //Label highScoreLabel;
     int level = 1;
+    Label levelLabel;
 
     public MyWorld()
     {    
@@ -20,10 +19,14 @@ public class MyWorld extends World
         super(600, 400, 1);         
         creatCactus();
         creatDino();
-        //creatCloud();
+        
         
         scoreLabel = new Label(0, 50);
         addObject(scoreLabel, 500 , 50);
+        
+        levelLabel = new Label(0, 50);
+        addObject(levelLabel, 100 , 50);
+        levelLabel.setValue(level);
         
         
     }
@@ -42,7 +45,7 @@ public class MyWorld extends World
     
        public void gameOver(){
         Greenfoot.setWorld(new endWorld());
-        //bestScore();
+        
         
         
     }
@@ -52,7 +55,9 @@ public class MyWorld extends World
         scoreLabel.setValue(Score);
          if(Score % 500 == 0){
             level += 1;
+            levelLabel.setValue(level);
         }
+        
     }
 
 }
