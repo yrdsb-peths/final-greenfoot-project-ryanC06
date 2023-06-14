@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Cactus extends Actor
 {
+     int speed = -4;
     GreenfootImage image = new GreenfootImage("cactus1.png");
     public Cactus(){
        image.scale(70,70);
@@ -15,7 +16,7 @@ public class Cactus extends Actor
     }
     public void act()
     {
-        move(-5);
+        move(speed); //-5
         if(atWorldEdge())
         {
             MyWorld world = (MyWorld) getWorld();
@@ -43,5 +44,8 @@ public class Cactus extends Actor
         {
             return false;
         }
+    }
+    public void setSpeed(int spd){
+        speed=spd;
     }
 }

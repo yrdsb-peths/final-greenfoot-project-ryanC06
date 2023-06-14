@@ -29,25 +29,26 @@ public class Dino extends Actor
         world.increaseScore();
         int groundLevel = getWorld().getHeight() - getImage().getHeight()/2;
         boolean onGround = (getY() == groundLevel);  
-        if (!onGround) // in middle of jump
+        if (!onGround) 
         {
-            ySpeed++; // adds gravity effect
-            setLocation(getX(), getY()+ySpeed); // fall (rising slower or falling faster)
-            if (getY()>=groundLevel) // has landed (reached ground level)
+            ySpeed++; //gravity 
+            setLocation(getX(), getY()+ySpeed); 
+            if (getY()>=groundLevel) 
             {
-                setLocation(getX(), groundLevel); // set on ground
-                Greenfoot.getKey(); // clears any key pressed during jump
+                setLocation(getX(), groundLevel); 
+                Greenfoot.getKey(); 
             }
         }else{
-            if ("space".equals(Greenfoot.getKey())) // jump key detected
+            if ("space".equals(Greenfoot.getKey())) 
             {
-                ySpeed = -23; // add jump speed
-                setLocation(getX(), getY()+ySpeed); // leave ground
+                ySpeed = -25; // add jump speed
+                setLocation(getX(), getY()+ySpeed);
             }
         }
         if (isTouching(Cactus.class)){
             //MyWorld world = (MyWorld) getWorld();
             world.gameOver();
+            //world.bestScore();
           }
           
         animateDino();
