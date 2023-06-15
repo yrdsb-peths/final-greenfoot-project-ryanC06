@@ -27,6 +27,8 @@ public class MyWorld extends World
         levelLabel = new Label(0, 50);
         addObject(levelLabel, 100 , 50);
         levelLabel.setValue(level);
+        Label levelTitle = new Label("lvl", 50);
+        addObject(levelTitle, 55, 50);
         
         
     }
